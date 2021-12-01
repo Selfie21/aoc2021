@@ -1,2 +1,5 @@
 # aoc2021
-Gonna try to compete at the challenge if i have time! See README for Placements
+[N] stands for didn't have time when leaderboard opened! Overall Place:
+First Day[N]: 
+
+
