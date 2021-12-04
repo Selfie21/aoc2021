@@ -7,4 +7,5 @@ Second Day[N]: 18688
 
 Third Day[N]: 28462
 
+This is useless since 6 AM is the worst to wake up and I just dont want to do it lmao
 
