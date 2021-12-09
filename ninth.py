@@ -1,8 +1,6 @@
 # 0 lowest 9 highest
 # risk level 1 plus its height
 # sum of all risk level low points
-from collections import deque
-
 import numpy as np
 
 with open("inputs/9", "r") as file:
