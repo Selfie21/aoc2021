@@ -1,13 +1,34 @@
-import numpy as np
-import itertools
+points_dict = {')': 1, ']': 2, '}': 3, '>': 4}
+opening_chars = ['(', '[', '{', '<']
+complementary = {'(': ')', '[': ']', '{': '}', '<': '>'}
 
-# without \n
-with open("inputs/9", "r") as file:
-    lines = file.read().splitlines()
-    height_map = np.array([[int(char) for char in line] for line in lines])
 
-# with \n
+def incomplete_checker(syntax):
+    openings = []
+    for char in syntax:
+        if char in opening_chars:
+            openings.append(complementary[char])
+        else:
+            if char == openings[-1]:
+                openings.pop()
+            else:
+                return 0
+    if openings:
+        score = 0
+        for closing_bracket in reversed(openings):
+            score *= 5
+            score += points_dict[closing_bracket]
+        return score
+    return 0
+
+
 with open("inputs/10", "r") as file:
-    lines = file.readlines()
+    lines = file.read().splitlines()
 
-print("")
+scores = []
+for line in lines:
+    score = incomplete_checker(line)
+    if score != 0:
+        scores.append(incomplete_checker(line))
+scores.sort()
+print(scores[int(len(scores)/2)])
